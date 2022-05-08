@@ -13,6 +13,7 @@
 		52117A892827B89D00F4F78B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52117A872827B89D00F4F78B /* Main.storyboard */; };
 		52117A8B2827B89F00F4F78B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52117A8A2827B89F00F4F78B /* Assets.xcassets */; };
 		52117A8E2827B89F00F4F78B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52117A8C2827B89F00F4F78B /* LaunchScreen.storyboard */; };
+		52117A9628283ECA00F4F78B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52117A9528283ECA00F4F78B /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		52117A8A2827B89F00F4F78B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52117A8D2827B89F00F4F78B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52117A8F2827B89F00F4F78B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52117A9528283ECA00F4F78B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				52117A812827B89D00F4F78B /* AppDelegate.swift */,
 				52117A832827B89D00F4F78B /* SceneDelegate.swift */,
+				52117A9528283ECA00F4F78B /* MainTabBarController.swift */,
 				52117A852827B89D00F4F78B /* ViewController.swift */,
 				52117A872827B89D00F4F78B /* Main.storyboard */,
 				52117A8A2827B89F00F4F78B /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			files = (
 				52117A862827B89D00F4F78B /* ViewController.swift in Sources */,
 				52117A822827B89D00F4F78B /* AppDelegate.swift in Sources */,
+				52117A9628283ECA00F4F78B /* MainTabBarController.swift in Sources */,
 				52117A842827B89D00F4F78B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

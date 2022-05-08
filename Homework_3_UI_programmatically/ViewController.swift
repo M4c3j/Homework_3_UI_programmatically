@@ -103,7 +103,6 @@ class ViewController: UIViewController {
 		view.translatesAutoresizingMaskIntoConstraints = false
 		return view
 	}()
-	
 	let scrollStackViewContainer: UIStackView = {
 		let view = UIStackView()
 		view.axis = .horizontal
@@ -119,12 +118,86 @@ class ViewController: UIViewController {
 		view.layer.cornerRadius = 20
 		return view
 	}()
+	
 	let subView2: UIView = {
 		let view = UIView()
 		view.widthAnchor.constraint(equalToConstant: 120).isActive = true
-		view.backgroundColor = UIColor.yellow
+		view.backgroundColor = UIColor.orange
 		view.layer.cornerRadius = 20
 		return view
+	}()
+	
+	// MARK: - What you want and View all
+	let whatYouWant: UILabel = {
+		let label = UILabel()
+		label.text = "What you want?"
+		label.font = .systemFont(ofSize: 15, weight: .heavy)
+		label.textAlignment = .left
+		label.textColor = .black
+		
+		label.translatesAutoresizingMaskIntoConstraints = false
+		
+		return label
+	}()
+	let viewAll: UIButton = {
+		let button = UIButton(type: .system)
+		let text = NSAttributedString(string: "View all", attributes: [
+			.font: UIFont.systemFont(ofSize: 15, weight: .regular),
+			.foregroundColor: UIColor.gray,
+		])
+		button.contentHorizontalAlignment = .trailing
+		button.setAttributedTitle(text, for: .normal)
+		button.translatesAutoresizingMaskIntoConstraints = false
+		return button
+	}()
+	
+	// MARK: - Small scroll view in the bottom
+	let smallScrollView:  UIScrollView = {
+		let view = UIScrollView()
+		view.translatesAutoresizingMaskIntoConstraints = false
+		return view
+	}()
+	let smallScrollStackViewContainer: UIStackView = {
+		let view = UIStackView()
+		view.axis = .horizontal
+		view.distribution = .fillEqually
+		view.spacing = 30
+		view.translatesAutoresizingMaskIntoConstraints = false
+		return view
+	} ()
+	let smallSubView1: UIView = {
+		let view = UIView()
+		view.widthAnchor.constraint(equalToConstant: 80).isActive = true
+		view.backgroundColor = UIColor.orange
+		view.layer.cornerRadius = 20
+		return view
+	}()
+	let smallSubView2: UIView = {
+		let view = UIView()
+		view.widthAnchor.constraint(equalToConstant: 80).isActive = true
+		view.backgroundColor = UIColor.orange
+		view.layer.cornerRadius = 20
+		return view
+	}()
+	let smallSubView3: UIView = {
+		let view = UIView()
+		view.widthAnchor.constraint(equalToConstant: 80).isActive = true
+		view.backgroundColor = UIColor.orange
+		view.layer.cornerRadius = 20
+		return view
+	}()
+	let smallSubView4: UIView = {
+		let view = UIView()
+		view.widthAnchor.constraint(equalToConstant: 80).isActive = true
+		view.backgroundColor = UIColor.orange
+		view.layer.cornerRadius = 20
+		return view
+	}()
+	
+	// MARK: - TABBAR
+	let tabBar: UITabBarController = {
+		let tabBar = UITabBarController()
+		return tabBar
 	}()
 	
 	override func viewDidLoad() {
@@ -141,6 +214,18 @@ class ViewController: UIViewController {
 		scrollView.addSubview(scrollStackViewContainer)
 		scrollStackViewContainer.addArrangedSubview(subView1)
 		scrollStackViewContainer.addArrangedSubview(subView2)
+		
+		view.addSubview(whatYouWant)
+		view.addSubview(viewAll)
+		
+		view.addSubview(smallScrollView)
+		smallScrollView.addSubview(smallScrollStackViewContainer)
+		smallScrollStackViewContainer.addArrangedSubview(smallSubView1)
+		smallScrollStackViewContainer.addArrangedSubview(smallSubView2)
+		smallScrollStackViewContainer.addArrangedSubview(smallSubView3)
+		smallScrollStackViewContainer.addArrangedSubview(smallSubView4)
+		
+		
 		
 		setupLayout()
 	}
@@ -189,6 +274,30 @@ class ViewController: UIViewController {
 		scrollStackViewContainer.widthAnchor.constraint(greaterThanOrEqualToConstant: screenWidth).isActive = true
 
 		subView1.heightAnchor.constraint(equalToConstant: screenHeight * 0.4).isActive = true
+		
+		whatYouWant.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: screenHeight * 0.015).isActive = true
+		whatYouWant.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: screenWidth * 0.04).isActive = true
+		whatYouWant.heightAnchor.constraint(equalToConstant: 40).isActive = true
+		whatYouWant.widthAnchor.constraint(equalToConstant: screenWidth * 0.4).isActive = true
+		
+		viewAll.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: screenHeight * 0.015).isActive = true
+		viewAll.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -screenWidth * 0.04).isActive = true
+		viewAll.heightAnchor.constraint(equalToConstant: 40).isActive = true
+		viewAll.widthAnchor.constraint(equalToConstant: screenWidth * 0.4).isActive = true
+		
+		smallScrollView.topAnchor.constraint(equalTo: whatYouWant.bottomAnchor, constant: screenHeight * 0.015).isActive = true
+		smallScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: screenWidth * 0.04).isActive = true
+		smallScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -screenWidth * 0.04).isActive = true
+		smallScrollView.heightAnchor.constraint(equalToConstant: screenHeight * 0.1).isActive = true
+
+		smallScrollStackViewContainer.topAnchor.constraint(equalTo: smallScrollView.topAnchor).isActive = true
+		smallScrollStackViewContainer.leadingAnchor.constraint(equalTo: smallScrollView.leadingAnchor).isActive = true
+		smallScrollStackViewContainer.trailingAnchor.constraint(equalTo: smallScrollView.trailingAnchor).isActive = true
+		smallScrollStackViewContainer.bottomAnchor.constraint(equalTo: smallScrollView.bottomAnchor).isActive = true
+		smallScrollStackViewContainer.widthAnchor.constraint(greaterThanOrEqualToConstant: screenWidth).isActive = true
+
+		smallSubView1.heightAnchor.constraint(equalToConstant: screenHeight * 0.1).isActive = true
+		
  	}
 }
 
