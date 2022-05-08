@@ -31,6 +31,7 @@ class ViewController: UIViewController {
 	let myProfileButton: UIButton = {
 		let button = UIButton(type: .system)
 		let image = UIImage(named: "MyProfileIcon")
+		button.imageView?.contentMode = .scaleAspectFit
 		button.setImage(image, for: .normal)
 		button.backgroundColor = UIColor.orange
 		button.layer.cornerRadius = 8
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
 		return button
 	} ()
 	
-//	// MARK: - FIND MORE text
+	// MARK: - FIND MORE text
 	let findMoreText: UILabel = {
 		
 		let label = UILabel()
@@ -57,12 +58,54 @@ class ViewController: UIViewController {
 		return label
 	}()
 	
+	// MARK: - Experiences Button
+	let experiencesButton: UIButton = {
+		let button = UIButton(type: .system)
+		let text = NSAttributedString(string: "Experiences", attributes: [
+			.font: UIFont.systemFont(ofSize: 15, weight: .heavy),
+			.foregroundColor: UIColor.black,
+		])
+		button.contentHorizontalAlignment = .leading
+		button.setAttributedTitle(text, for: .normal)
+		button.translatesAutoresizingMaskIntoConstraints = false
+		return button
+	}()
+	
+		// MARK: - Adventures Button
+	let adventuresButton: UIButton = {
+		let button = UIButton(type: .system)
+		let text = NSAttributedString(string: "Adventures", attributes: [
+			.font: UIFont.systemFont(ofSize: 15, weight: .regular),
+			.foregroundColor: UIColor.gray,
+		])
+		button.setAttributedTitle(text, for: .normal)
+		button.contentHorizontalAlignment = .trailing
+		button.translatesAutoresizingMaskIntoConstraints = false
+		return button
+	}()
+	
+		// MARK: - Adventures Button
+	let activitiesButton: UIButton = {
+		let button = UIButton(type: .system)
+		let text = NSAttributedString(string: "Activities", attributes: [
+			.font: UIFont.systemFont(ofSize: 15, weight: .regular),
+			.foregroundColor: UIColor.gray,
+		])
+		button.contentHorizontalAlignment = .trailing
+		button.setAttributedTitle(text, for: .normal)
+		button.translatesAutoresizingMaskIntoConstraints = false
+		return button
+	}()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		view.addSubview(hamburgerMenu)
 		view.addSubview(myProfileButton)
 		view.addSubview(findMoreText)
+		view.addSubview(experiencesButton)
+		view.addSubview(adventuresButton)
+		view.addSubview(activitiesButton)
 		
 		setupLayout()
 	}
@@ -75,13 +118,28 @@ class ViewController: UIViewController {
 		
 		myProfileButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -screenWidth * 0.04).isActive = true
 		myProfileButton.topAnchor.constraint(equalTo: view.topAnchor, constant: screenHeight * 0.08).isActive = true
-		myProfileButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-		myProfileButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+		myProfileButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+		myProfileButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
 		
 		findMoreText.topAnchor.constraint(equalTo: hamburgerMenu.bottomAnchor, constant: screenHeight * 0.05).isActive = true
 		findMoreText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: screenWidth * 0.04).isActive = true
 		findMoreText.heightAnchor.constraint(equalToConstant: 50).isActive = true
 		findMoreText.widthAnchor.constraint(equalToConstant: screenWidth * 0.8).isActive = true
+		
+		experiencesButton.topAnchor.constraint(equalTo: findMoreText.topAnchor, constant: screenHeight * 0.07).isActive = true
+		experiencesButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: screenWidth * 0.04).isActive = true
+		experiencesButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+		experiencesButton.widthAnchor.constraint(equalToConstant: screenWidth * 0.25).isActive = true
+		
+		adventuresButton.topAnchor.constraint(equalTo: findMoreText.topAnchor, constant: screenHeight * 0.07).isActive = true
+		adventuresButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+		adventuresButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+		adventuresButton.widthAnchor.constraint(equalToConstant: screenWidth * 0.25).isActive = true
+
+		activitiesButton.topAnchor.constraint(equalTo: findMoreText.topAnchor, constant: screenHeight * 0.07).isActive = true
+		activitiesButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -screenWidth * 0.04).isActive = true
+		activitiesButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+		activitiesButton.widthAnchor.constraint(equalToConstant: screenWidth * 0.22).isActive = true
 	}
 
 
