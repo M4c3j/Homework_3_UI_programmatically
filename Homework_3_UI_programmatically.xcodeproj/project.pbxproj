@@ -14,6 +14,7 @@
 		52117A8E2827B89F00F4F78B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52117A8C2827B89F00F4F78B /* LaunchScreen.storyboard */; };
 		52117A9628283ECA00F4F78B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52117A9528283ECA00F4F78B /* MainTabBarController.swift */; };
 		524EE0EE28294D53001A65AC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524EE0ED28294D53001A65AC /* TabBarViewController.swift */; };
+		524EE0F2282955BA001A65AC /* PopUpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524EE0F1282955BA001A65AC /* PopUpWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		52117A8F2827B89F00F4F78B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52117A9528283ECA00F4F78B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		524EE0ED28294D53001A65AC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		524EE0F1282955BA001A65AC /* PopUpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				52117A8A2827B89F00F4F78B /* Assets.xcassets */,
 				52117A8C2827B89F00F4F78B /* LaunchScreen.storyboard */,
 				52117A8F2827B89F00F4F78B /* Info.plist */,
+				524EE0F1282955BA001A65AC /* PopUpWindow.swift */,
 			);
 			path = Homework_3_UI_programmatically;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				52117A862827B89D00F4F78B /* ViewController.swift in Sources */,
 				52117A822827B89D00F4F78B /* AppDelegate.swift in Sources */,
+				524EE0F2282955BA001A65AC /* PopUpWindow.swift in Sources */,
 				52117A9628283ECA00F4F78B /* MainTabBarController.swift in Sources */,
 				524EE0EE28294D53001A65AC /* TabBarViewController.swift in Sources */,
 				52117A842827B89D00F4F78B /* SceneDelegate.swift in Sources */,

@@ -12,14 +12,11 @@ class ViewController: UIViewController {
 	var screenHeight = UIScreen.main.bounds.height
 	var screenWidth = UIScreen.main.bounds.width
 	
-	// MARK: - Hamburger menu
 	let hamburgerMenu: UIButton = {
 		let button = UIButton(type: .system)
 		let image = UIImage(systemName: "text.justify.left",
 							withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .bold, scale: .large ))?.withTintColor(.orange, renderingMode: .alwaysOriginal)
 		button.setImage(image, for: .normal)
-//		button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-		
 		button.imageView?.centerYAnchor.constraint(equalTo: button.centerYAnchor).isActive = true
 		button.imageView?.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
 		button.translatesAutoresizingMaskIntoConstraints = false
@@ -27,9 +24,9 @@ class ViewController: UIViewController {
 		return button
 	} ()
 	
-	// MARK: - My Profile - button with face in top right corner
 	let myProfileButton: UIButton = {
 		let button = UIButton(type: .system)
+		button.addTarget(self, action: #selector(didClickOnButton), for: .touchUpInside)
 		let image = UIImage(named: "MyProfileIcon")
 		button.imageView?.contentMode = .scaleAspectFit
 		button.setImage(image, for: .normal)
@@ -44,7 +41,6 @@ class ViewController: UIViewController {
 		return button
 	} ()
 	
-	// MARK: - FIND MORE text
 	let findMoreText: UILabel = {
 		
 		let label = UILabel()
@@ -58,7 +54,6 @@ class ViewController: UIViewController {
 		return label
 	}()
 	
-	// MARK: - Experiences Button
 	let experiencesButton: UIButton = {
 		let button = UIButton(type: .system)
 		let text = NSAttributedString(string: "Experiences", attributes: [
@@ -71,7 +66,6 @@ class ViewController: UIViewController {
 		return button
 	}()
 	
-		// MARK: - Adventures Button
 	let adventuresButton: UIButton = {
 		let button = UIButton(type: .system)
 		let text = NSAttributedString(string: "Adventures", attributes: [
@@ -84,7 +78,6 @@ class ViewController: UIViewController {
 		return button
 	}()
 	
-		// MARK: - Adventures Button
 	let activitiesButton: UIButton = {
 		let button = UIButton(type: .system)
 		let text = NSAttributedString(string: "Activities", attributes: [
@@ -97,7 +90,6 @@ class ViewController: UIViewController {
 		return button
 	}()
 	
-	// MARK: - Scroll View in the middle
 	let scrollView: UIScrollView = {
 		let view = UIScrollView()
 		view.translatesAutoresizingMaskIntoConstraints = false
@@ -127,7 +119,6 @@ class ViewController: UIViewController {
 		return view
 	}()
 	
-	// MARK: - What you want and View all
 	let whatYouWant: UILabel = {
 		let label = UILabel()
 		label.text = "What you want?"
@@ -151,7 +142,6 @@ class ViewController: UIViewController {
 		return button
 	}()
 	
-	// MARK: - Small scroll view in the bottom
 	let smallScrollView:  UIScrollView = {
 		let view = UIScrollView()
 		view.translatesAutoresizingMaskIntoConstraints = false
@@ -193,13 +183,7 @@ class ViewController: UIViewController {
 		view.layer.cornerRadius = 20
 		return view
 	}()
-	
-	// MARK: - TABBAR
-	let tabBar: UITabBarController = {
-		let tabBar = UITabBarController()
-		return tabBar
-	}()
-	
+		
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -297,8 +281,11 @@ class ViewController: UIViewController {
 		smallScrollStackViewContainer.widthAnchor.constraint(greaterThanOrEqualToConstant: screenWidth).isActive = true
 
 		smallSubView1.heightAnchor.constraint(equalToConstant: screenHeight * 0.1).isActive = true
-		
  	}
+	
+	@IBAction func didClickOnButton() {
+		self.present(PopUpWindow(), animated: true, completion: nil)
+	}
 }
 
 
